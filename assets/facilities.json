@@ -1,0 +1,702 @@
+[
+  {
+    "id": "facility-001",
+    "name": "City Fitness Central",
+    "address": "123 Market St, Sydney, NSW 2000",
+    "location": { "latitude": -33.8703, "longitude": 151.208 },
+    "facilities": ["Pool", "Sauna", "24/7 Access", "Yoga Classes"]
+  },
+  {
+    "id": "facility-002",
+    "name": "Suburban Strength & Co",
+    "address": "456 High St, Parramatta, NSW 2150",
+    "location": { "latitude": -33.815, "longitude": 151.0031 },
+    "facilities": ["Free Weights", "24/7 Access", "Parking"]
+  },
+  {
+    "id": "facility-003",
+    "name": "Harbour View Wellness",
+    "address": "789 Beach Rd, Bondi, NSW 2026",
+    "location": { "latitude": -33.8915, "longitude": 151.2767 },
+    "facilities": ["Pool", "Sauna", "Personal Training", "Pilates Studio"]
+  },
+  {
+    "id": "facility-004",
+    "name": "PowerLift Express",
+    "address": "321 Industrial Ave, Bankstown, NSW 2200",
+    "location": { "latitude": -33.9173, "longitude": 151.0342 },
+    "facilities": ["Free Weights", "Powerlifting Equipment", "24/7 Access"]
+  },
+  {
+    "id": "facility-005",
+    "name": "Zenith Health Club",
+    "address": "555 Main St, Chatswood, NSW 2067",
+    "location": { "latitude": -33.7969, "longitude": 151.1835 },
+    "facilities": ["Pool", "Sauna", "Yoga Classes", "Spa", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-006",
+    "name": "The Iron Den",
+    "address": "42 Smith St, Newtown, NSW 2042",
+    "location": { "latitude": -33.8989, "longitude": 151.1794 },
+    "facilities": ["Free Weights", "Strongman Equipment", "Personal Training"]
+  },
+  {
+    "id": "facility-007",
+    "name": "FitLife 24/7",
+    "address": "100 George St, Penrith, NSW 2750",
+    "location": { "latitude": -33.7507, "longitude": 150.6939 },
+    "facilities": ["24/7 Access", "Cardio Equipment", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-008",
+    "name": "Aqua Fitness Centre",
+    "address": "88 Pool Lane, Manly, NSW 2095",
+    "location": { "latitude": -33.7969, "longitude": 151.2871 },
+    "facilities": ["Pool", "Aqua Aerobics", "Sauna", "Steam Room"]
+  },
+  {
+    "id": "facility-009",
+    "name": "Surry Hills Boxing Club",
+    "address": "25 Crown St, Surry Hills, NSW 2010",
+    "location": { "latitude": -33.8838, "longitude": 151.2119 },
+    "facilities": ["Boxing Ring", "Personal Training", "Group Classes"]
+  },
+  {
+    "id": "facility-010",
+    "name": "CrossFit Sydney CBD",
+    "address": "301 Castlereagh St, Sydney, NSW 2000",
+    "location": { "latitude": -33.8701, "longitude": 151.2093 },
+    "facilities": ["CrossFit Equipment", "Group Classes", "Personal Training", "Parking"]
+  },
+  {
+    "id": "facility-011",
+    "name": "Melbourne Central Fitness",
+    "address": "211 La Trobe St, Melbourne, VIC 3000",
+    "location": { "latitude": -37.8102, "longitude": 144.9628 },
+    "facilities": ["Pool", "Sauna", "24/7 Access", "Yoga Classes", "Cafe"]
+  },
+  {
+    "id": "facility-012",
+    "name": "Fitzroy Strength Lab",
+    "address": "88 Smith St, Fitzroy, VIC 3065",
+    "location": { "latitude": -37.7993, "longitude": 144.9785 },
+    "facilities": ["Free Weights", "Powerlifting Equipment", "Personal Training"]
+  },
+  {
+    "id": "facility-013",
+    "name": "South Yarra Pilates Studio",
+    "address": "456 Chapel St, South Yarra, VIC 3141",
+    "location": { "latitude": -37.8404, "longitude": 144.9935 },
+    "facilities": ["Pilates Studio", "Yoga Classes", "Personal Training"]
+  },
+  {
+    "id": "facility-014",
+    "name": "St Kilda Beach Fitness",
+    "address": "10 Jacka Blvd, St Kilda, VIC 3182",
+    "location": { "latitude": -37.8671, "longitude": 144.9739 },
+    "facilities": ["Outdoor Training", "Beach Access", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-015",
+    "name": "Richmond Wellness Hub",
+    "address": "234 Bridge Rd, Richmond, VIC 3121",
+    "location": { "latitude": -37.8197, "longitude": 144.9961 },
+    "facilities": ["Pool", "Sauna", "Spa", "Yoga Classes", "Cafe"]
+  },
+  {
+    "id": "facility-016",
+    "name": "Docklands Aquatic Centre",
+    "address": "40 Bourke St, Docklands, VIC 3008",
+    "location": { "latitude": -37.8146, "longitude": 144.9487 },
+    "facilities": ["Olympic Pool", "Aqua Aerobics", "Sauna", "Steam Room", "Parking"]
+  },
+  {
+    "id": "facility-017",
+    "name": "Carlton CrossFit",
+    "address": "112 Drummond St, Carlton, VIC 3053",
+    "location": { "latitude": -37.8024, "longitude": 144.9674 },
+    "facilities": ["CrossFit Equipment", "Group Classes", "Olympic Lifting Platform"]
+  },
+  {
+    "id": "facility-018",
+    "name": "Brighton Fitness Centre",
+    "address": "88 Church St, Brighton, VIC 3186",
+    "location": { "latitude": -37.9067, "longitude": 144.9978 },
+    "facilities": ["Pool", "Tennis Courts", "Squash Courts", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-019",
+    "name": "Northcote Yoga Collective",
+    "address": "255 High St, Northcote, VIC 3070",
+    "location": { "latitude": -37.7685, "longitude": 144.9989 },
+    "facilities": ["Yoga Classes", "Meditation Room", "Pilates Studio"]
+  },
+  {
+    "id": "facility-020",
+    "name": "Port Melbourne Boxing Gym",
+    "address": "167 Bay St, Port Melbourne, VIC 3207",
+    "location": { "latitude": -37.8373, "longitude": 144.9331 },
+    "facilities": ["Boxing Ring", "Heavy Bags", "Group Classes", "Personal Training"]
+  },
+  {
+    "id": "facility-021",
+    "name": "Bondi Junction Mega Gym",
+    "address": "500 Oxford St, Bondi Junction, NSW 2022",
+    "location": { "latitude": -33.8932, "longitude": 151.2504 },
+    "facilities": ["Pool", "Sauna", "24/7 Access", "Basketball Court", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-022",
+    "name": "North Sydney Fitness",
+    "address": "88 Walker St, North Sydney, NSW 2060",
+    "location": { "latitude": -33.8387, "longitude": 151.2069 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Group Classes"]
+  },
+  {
+    "id": "facility-023",
+    "name": "Paddington Yoga House",
+    "address": "201 Oxford St, Paddington, NSW 2021",
+    "location": { "latitude": -33.8849, "longitude": 151.2257 },
+    "facilities": ["Yoga Classes", "Meditation Room", "Pilates Studio", "Cafe"]
+  },
+  {
+    "id": "facility-024",
+    "name": "Pyrmont Bay Fitness",
+    "address": "75 Pyrmont St, Pyrmont, NSW 2009",
+    "location": { "latitude": -33.8716, "longitude": 151.1938 },
+    "facilities": ["Pool", "Sauna", "Spa", "Personal Training", "Parking"]
+  },
+  {
+    "id": "facility-025",
+    "name": "Cronulla Beach Fitness",
+    "address": "32 Gerrale St, Cronulla, NSW 2230",
+    "location": { "latitude": -34.0578, "longitude": 151.1517 },
+    "facilities": ["Outdoor Training", "Beach Access", "Group Classes", "Cafe"]
+  },
+  {
+    "id": "facility-026",
+    "name": "Hornsby Heights Club",
+    "address": "45 Pacific Hwy, Hornsby, NSW 2077",
+    "location": { "latitude": -33.7042, "longitude": 151.0986 },
+    "facilities": ["Pool", "Tennis Courts", "Squash Courts", "Sauna", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-027",
+    "name": "Liverpool Powerhouse Gym",
+    "address": "200 Macquarie St, Liverpool, NSW 2170",
+    "location": { "latitude": -33.9209, "longitude": 150.923 },
+    "facilities": ["Free Weights", "Powerlifting Equipment", "24/7 Access", "Parking"]
+  },
+  {
+    "id": "facility-028",
+    "name": "Balmain Wellness Studio",
+    "address": "312 Darling St, Balmain, NSW 2041",
+    "location": { "latitude": -33.8582, "longitude": 151.1803 },
+    "facilities": ["Yoga Classes", "Pilates Studio", "Meditation Room", "Personal Training"]
+  },
+  {
+    "id": "facility-029",
+    "name": "Randwick Fitness Hub",
+    "address": "88 Belmore Rd, Randwick, NSW 2031",
+    "location": { "latitude": -33.9159, "longitude": 151.2415 },
+    "facilities": ["Pool", "Sauna", "Group Classes", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-030",
+    "name": "Mosman Elite Gym",
+    "address": "525 Military Rd, Mosman, NSW 2088",
+    "location": { "latitude": -33.8283, "longitude": 151.244 },
+    "facilities": ["Pool", "Spa", "Personal Training", "Pilates Studio", "Cafe"]
+  },
+  {
+    "id": "facility-031",
+    "name": "Prahran Market Fitness",
+    "address": "163 Commercial Rd, Prahran, VIC 3181",
+    "location": { "latitude": -37.8507, "longitude": 144.9903 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Group Classes"]
+  },
+  {
+    "id": "facility-032",
+    "name": "Collingwood Iron Works",
+    "address": "45 Rokeby St, Collingwood, VIC 3066",
+    "location": { "latitude": -37.8047, "longitude": 144.9892 },
+    "facilities": ["Free Weights", "Strongman Equipment", "Boxing Ring", "Personal Training"]
+  },
+  {
+    "id": "facility-033",
+    "name": "Southbank Aqua Fitness",
+    "address": "8 Southbank Blvd, Southbank, VIC 3006",
+    "location": { "latitude": -37.8226, "longitude": 144.9631 },
+    "facilities": ["Pool", "Aqua Aerobics", "Sauna", "Steam Room", "Cafe"]
+  },
+  {
+    "id": "facility-034",
+    "name": "Hawthorn Family Fitness",
+    "address": "600 Glenferrie Rd, Hawthorn, VIC 3122",
+    "location": { "latitude": -37.8221, "longitude": 145.0354 },
+    "facilities": ["Pool", "Kids Programs", "Group Classes", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-035",
+    "name": "Brunswick Street Gym",
+    "address": "290 Brunswick St, Fitzroy, VIC 3065",
+    "location": { "latitude": -37.7989, "longitude": 144.979 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Parking"]
+  },
+  {
+    "id": "facility-036",
+    "name": "Caulfield Wellness Centre",
+    "address": "444 Glen Eira Rd, Caulfield, VIC 3162",
+    "location": { "latitude": -37.8762, "longitude": 145.0226 },
+    "facilities": ["Pool", "Sauna", "Yoga Classes", "Pilates Studio", "Spa"]
+  },
+  {
+    "id": "facility-037",
+    "name": "Footscray Boxing & Fitness",
+    "address": "78 Nicholson St, Footscray, VIC 3011",
+    "location": { "latitude": -37.8003, "longitude": 144.8986 },
+    "facilities": ["Boxing Ring", "Heavy Bags", "Free Weights", "Group Classes"]
+  },
+  {
+    "id": "facility-038",
+    "name": "Albert Park Lakeside Gym",
+    "address": "12 Aughtie Dr, Albert Park, VIC 3206",
+    "location": { "latitude": -37.8455, "longitude": 144.9701 },
+    "facilities": ["Outdoor Training", "Lake Views", "Group Classes", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-039",
+    "name": "Camberwell 24/7 Fitness",
+    "address": "788 Burke Rd, Camberwell, VIC 3124",
+    "location": { "latitude": -37.8434, "longitude": 145.0606 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Parking"]
+  },
+  {
+    "id": "facility-040",
+    "name": "Moonee Ponds Recreation Centre",
+    "address": "40 Homer St, Moonee Ponds, VIC 3039",
+    "location": { "latitude": -37.7652, "longitude": 144.9235 },
+    "facilities": ["Pool", "Basketball Court", "Squash Courts", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-041",
+    "name": "Glebe Point Fitness",
+    "address": "178 Glebe Point Rd, Glebe, NSW 2037",
+    "location": { "latitude": -33.8773, "longitude": 151.1832 },
+    "facilities": ["24/7 Access", "Group Classes", "Personal Training", "Parking"]
+  },
+  {
+    "id": "facility-042",
+    "name": "Marrickville CrossFit",
+    "address": "88 Sydenham Rd, Marrickville, NSW 2204",
+    "location": { "latitude": -33.9114, "longitude": 151.1552 },
+    "facilities": ["CrossFit Equipment", "Olympic Lifting Platform", "Group Classes"]
+  },
+  {
+    "id": "facility-043",
+    "name": "Leichhardt Fitness Studio",
+    "address": "125 Norton St, Leichhardt, NSW 2040",
+    "location": { "latitude": -33.8834, "longitude": 151.1561 },
+    "facilities": ["Yoga Classes", "Pilates Studio", "Personal Training", "Cafe"]
+  },
+  {
+    "id": "facility-044",
+    "name": "Double Bay Elite",
+    "address": "45 Bay St, Double Bay, NSW 2028",
+    "location": { "latitude": -33.8783, "longitude": 151.2426 },
+    "facilities": ["Pool", "Spa", "Sauna", "Personal Training", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-045",
+    "name": "Epping Mega Centre",
+    "address": "300 Beecroft Rd, Epping, NSW 2121",
+    "location": { "latitude": -33.7726, "longitude": 151.0815 },
+    "facilities": ["Pool", "Basketball Court", "Squash Courts", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-046",
+    "name": "Revesby Heights Gym",
+    "address": "52 Marco Ave, Revesby, NSW 2212",
+    "location": { "latitude": -33.9516, "longitude": 151.0165 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Parking"]
+  },
+  {
+    "id": "facility-047",
+    "name": "Coogee Beach Fitness",
+    "address": "180 Coogee Bay Rd, Coogee, NSW 2034",
+    "location": { "latitude": -33.9202, "longitude": 151.2569 },
+    "facilities": ["Outdoor Training", "Beach Access", "Pool", "Cafe"]
+  },
+  {
+    "id": "facility-048",
+    "name": "Ryde Aquatic Leisure Centre",
+    "address": "1 Blenheim Rd, Ryde, NSW 2112",
+    "location": { "latitude": -33.8117, "longitude": 151.1017 },
+    "facilities": ["Olympic Pool", "Water Slides", "Sauna", "Kids Programs", "Parking"]
+  },
+  {
+    "id": "facility-049",
+    "name": "Ashfield Community Gym",
+    "address": "260 Liverpool Rd, Ashfield, NSW 2131",
+    "location": { "latitude": -33.8887, "longitude": 151.1245 },
+    "facilities": ["Pool", "Basketball Court", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-050",
+    "name": "Strathfield Sports Centre",
+    "address": "11 Cotswold Rd, Strathfield, NSW 2135",
+    "location": { "latitude": -33.8723, "longitude": 151.0851 },
+    "facilities": ["Pool", "Tennis Courts", "Squash Courts", "Sauna", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-051",
+    "name": "Essendon Fields Fitness",
+    "address": "100 English St, Essendon Fields, VIC 3041",
+    "location": { "latitude": -37.7267, "longitude": 144.9029 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-052",
+    "name": "Templestowe Valley Fitness",
+    "address": "1060 Doncaster Rd, Templestowe, VIC 3106",
+    "location": { "latitude": -37.7656, "longitude": 145.1479 },
+    "facilities": ["Pool", "Sauna", "Group Classes", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-053",
+    "name": "Glen Waverley Wellness",
+    "address": "235 Springvale Rd, Glen Waverley, VIC 3150",
+    "location": { "latitude": -37.8775, "longitude": 145.1636 },
+    "facilities": ["Pool", "Yoga Classes", "Pilates Studio", "Personal Training"]
+  },
+  {
+    "id": "facility-054",
+    "name": "Malvern CrossFit Box",
+    "address": "88 Glenferrie Rd, Malvern, VIC 3144",
+    "location": { "latitude": -37.8577, "longitude": 145.0279 },
+    "facilities": ["CrossFit Equipment", "Olympic Lifting Platform", "Group Classes", "Personal Training"]
+  },
+  {
+    "id": "facility-055",
+    "name": "Elwood Beach Fitness Club",
+    "address": "88 Ormond Esplanade, Elwood, VIC 3184",
+    "location": { "latitude": -37.885, "longitude": 144.9807 },
+    "facilities": ["Beach Access", "Outdoor Training", "Yoga Classes", "Cafe"]
+  },
+  {
+    "id": "facility-056",
+    "name": "Box Hill Aquatic Centre",
+    "address": "470 Station St, Box Hill, VIC 3128",
+    "location": { "latitude": -37.8193, "longitude": 145.1236 },
+    "facilities": ["Olympic Pool", "Aqua Aerobics", "Sauna", "Kids Programs", "Parking"]
+  },
+  {
+    "id": "facility-057",
+    "name": "Williamstown Beach Gym",
+    "address": "14 The Strand, Williamstown, VIC 3016",
+    "location": { "latitude": -37.8647, "longitude": 144.8986 },
+    "facilities": ["Beach Access", "Outdoor Training", "Free Weights", "Parking"]
+  },
+  {
+    "id": "facility-058",
+    "name": "Kew Junction Fitness",
+    "address": "188 High St, Kew, VIC 3101",
+    "location": { "latitude": -37.8073, "longitude": 145.0313 },
+    "facilities": ["Pool", "Sauna", "Pilates Studio", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-059",
+    "name": "Yarraville Community Centre",
+    "address": "59 Francis St, Yarraville, VIC 3013",
+    "location": { "latitude": -37.8152, "longitude": 144.8903 },
+    "facilities": ["Pool", "Basketball Court", "Group Classes", "Kids Programs"]
+  },
+  {
+    "id": "facility-060",
+    "name": "Bentleigh Fitness Studio",
+    "address": "420 Centre Rd, Bentleigh, VIC 3204",
+    "location": { "latitude": -37.9195, "longitude": 145.0364 },
+    "facilities": ["Yoga Classes", "Pilates Studio", "Personal Training", "Parking"]
+  },
+  {
+    "id": "facility-061",
+    "name": "Waterloo Metro Gym",
+    "address": "88 Botany Rd, Waterloo, NSW 2017",
+    "location": { "latitude": -33.8997, "longitude": 151.2066 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Group Classes"]
+  },
+  {
+    "id": "facility-062",
+    "name": "Dulwich Hill Fitness Hub",
+    "address": "300 New Canterbury Rd, Dulwich Hill, NSW 2203",
+    "location": { "latitude": -33.904, "longitude": 151.1419 },
+    "facilities": ["Pool", "Group Classes", "Personal Training", "Parking"]
+  },
+  {
+    "id": "facility-063",
+    "name": "Dee Why Beach Club",
+    "address": "5 The Strand, Dee Why, NSW 2099",
+    "location": { "latitude": -33.7532, "longitude": 151.2989 },
+    "facilities": ["Beach Access", "Pool", "Sauna", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-064",
+    "name": "Castle Hill Sports Complex",
+    "address": "77 Pennant Hills Rd, Castle Hill, NSW 2154",
+    "location": { "latitude": -33.7311, "longitude": 151.0023 },
+    "facilities": ["Pool", "Basketball Court", "Tennis Courts", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-065",
+    "name": "Rozelle Powerlifting Gym",
+    "address": "556 Darling St, Rozelle, NSW 2039",
+    "location": { "latitude": -33.8617, "longitude": 151.1693 },
+    "facilities": ["Powerlifting Equipment", "Free Weights", "Personal Training"]
+  },
+  {
+    "id": "facility-066",
+    "name": "Hurstville Aquatic Centre",
+    "address": "1 MacMahon St, Hurstville, NSW 2220",
+    "location": { "latitude": -33.9685, "longitude": 151.1022 },
+    "facilities": ["Olympic Pool", "Water Slides", "Sauna", "Kids Programs", "Parking"]
+  },
+  {
+    "id": "facility-067",
+    "name": "Maroubra Junction Gym",
+    "address": "737 Anzac Parade, Maroubra, NSW 2035",
+    "location": { "latitude": -33.9502, "longitude": 151.2431 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Parking"]
+  },
+  {
+    "id": "facility-068",
+    "name": "Chatswood Wellness Studio",
+    "address": "65 Albert Ave, Chatswood, NSW 2067",
+    "location": { "latitude": -33.7962, "longitude": 151.1848 },
+    "facilities": ["Yoga Classes", "Pilates Studio", "Meditation Room", "Personal Training"]
+  },
+  {
+    "id": "facility-069",
+    "name": "Homebush Olympic Park",
+    "address": "1 Olympic Blvd, Homebush, NSW 2127",
+    "location": { "latitude": -33.8474, "longitude": 151.0679 },
+    "facilities": ["Olympic Pool", "Athletics Track", "Tennis Courts", "Basketball Court", "Parking"]
+  },
+  {
+    "id": "facility-070",
+    "name": "Kogarah Fitness Centre",
+    "address": "35 Railway Parade, Kogarah, NSW 2217",
+    "location": { "latitude": -33.9639, "longitude": 151.1336 },
+    "facilities": ["Pool", "Sauna", "Group Classes", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-071",
+    "name": "Preston Fitness Hub",
+    "address": "265 Murray Rd, Preston, VIC 3072",
+    "location": { "latitude": -37.7421, "longitude": 145.0024 },
+    "facilities": ["Pool", "Basketball Court", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-072",
+    "name": "Reservoir Community Gym",
+    "address": "88 Spring St, Reservoir, VIC 3073",
+    "location": { "latitude": -37.7186, "longitude": 145.0091 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Group Classes"]
+  },
+  {
+    "id": "facility-073",
+    "name": "Frankston Aquatic Centre",
+    "address": "20 Playne St, Frankston, VIC 3199",
+    "location": { "latitude": -38.1424, "longitude": 145.1253 },
+    "facilities": ["Olympic Pool", "Water Slides", "Sauna", "Kids Programs", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-074",
+    "name": "Dandenong Plaza Fitness",
+    "address": "250 Lonsdale St, Dandenong, VIC 3175",
+    "location": { "latitude": -37.9872, "longitude": 145.2154 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Parking"]
+  },
+  {
+    "id": "facility-075",
+    "name": "Werribee Sports Centre",
+    "address": "50 Heaths Rd, Werribee, VIC 3030",
+    "location": { "latitude": -37.9019, "longitude": 144.6617 },
+    "facilities": ["Pool", "Basketball Court", "Squash Courts", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-076",
+    "name": "Sunbury Fitness Club",
+    "address": "15 Macedon St, Sunbury, VIC 3429",
+    "location": { "latitude": -37.5784, "longitude": 144.7276 },
+    "facilities": ["Pool", "Tennis Courts", "Sauna", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-077",
+    "name": "Blackburn Wellness Centre",
+    "address": "5 Blackburn Rd, Blackburn, VIC 3130",
+    "location": { "latitude": -37.8165, "longitude": 145.1488 },
+    "facilities": ["Pool", "Sauna", "Yoga Classes", "Pilates Studio", "Cafe"]
+  },
+  {
+    "id": "facility-078",
+    "name": "Mordialloc Beach Gym",
+    "address": "288 Main St, Mordialloc, VIC 3195",
+    "location": { "latitude": -38.0021, "longitude": 145.0885 },
+    "facilities": ["Beach Access", "Outdoor Training", "Group Classes", "Cafe"]
+  },
+  {
+    "id": "facility-079",
+    "name": "Cheltenham Boxing Club",
+    "address": "140 Charman Rd, Cheltenham, VIC 3192",
+    "location": { "latitude": -37.9695, "longitude": 145.0548 },
+    "facilities": ["Boxing Ring", "Heavy Bags", "Free Weights", "Group Classes"]
+  },
+  {
+    "id": "facility-080",
+    "name": "Noble Park Fitness",
+    "address": "42 Douglas St, Noble Park, VIC 3174",
+    "location": { "latitude": -37.9704, "longitude": 145.1755 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Parking"]
+  },
+  {
+    "id": "facility-081",
+    "name": "Artarmon Fitness Studio",
+    "address": "88 Hampden Rd, Artarmon, NSW 2064",
+    "location": { "latitude": -33.8095, "longitude": 151.1849 },
+    "facilities": ["Yoga Classes", "Pilates Studio", "Personal Training"]
+  },
+  {
+    "id": "facility-082",
+    "name": "Eastwood Community Centre",
+    "address": "160 Rowe St, Eastwood, NSW 2122",
+    "location": { "latitude": -33.7916, "longitude": 151.0812 },
+    "facilities": ["Pool", "Basketball Court", "Group Classes", "Kids Programs", "Parking"]
+  },
+  {
+    "id": "facility-083",
+    "name": "Mascot CrossFit",
+    "address": "45 Coward St, Mascot, NSW 2020",
+    "location": { "latitude": -33.9238, "longitude": 151.1944 },
+    "facilities": ["CrossFit Equipment", "Olympic Lifting Platform", "Group Classes"]
+  },
+  {
+    "id": "facility-084",
+    "name": "Lindfield Wellness Hub",
+    "address": "235 Pacific Hwy, Lindfield, NSW 2070",
+    "location": { "latitude": -33.7781, "longitude": 151.1657 },
+    "facilities": ["Pool", "Sauna", "Yoga Classes", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-085",
+    "name": "Rockdale Fitness Centre",
+    "address": "448 Princes Hwy, Rockdale, NSW 2216",
+    "location": { "latitude": -33.9528, "longitude": 151.1397 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Group Classes"]
+  },
+  {
+    "id": "facility-086",
+    "name": "Five Dock Aquatic Centre",
+    "address": "85 Queens Rd, Five Dock, NSW 2046",
+    "location": { "latitude": -33.8656, "longitude": 151.1287 },
+    "facilities": ["Olympic Pool", "Aqua Aerobics", "Sauna", "Kids Programs", "Parking"]
+  },
+  {
+    "id": "facility-087",
+    "name": "Concord Sports Complex",
+    "address": "1 Rochester St, Concord, NSW 2137",
+    "location": { "latitude": -33.8592, "longitude": 151.0964 },
+    "facilities": ["Pool", "Tennis Courts", "Basketball Court", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-088",
+    "name": "Drummoyne Fitness Club",
+    "address": "88 Victoria Rd, Drummoyne, NSW 2047",
+    "location": { "latitude": -33.8517, "longitude": 151.1552 },
+    "facilities": ["Pool", "Sauna", "Personal Training", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-089",
+    "name": "Campsie Community Gym",
+    "address": "215 Beamish St, Campsie, NSW 2194",
+    "location": { "latitude": -33.9131, "longitude": 151.1033 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Group Classes"]
+  },
+  {
+    "id": "facility-090",
+    "name": "Neutral Bay Wellness",
+    "address": "155 Military Rd, Neutral Bay, NSW 2089",
+    "location": { "latitude": -33.8307, "longitude": 151.2183 },
+    "facilities": ["Yoga Classes", "Pilates Studio", "Personal Training", "Cafe"]
+  },
+  {
+    "id": "facility-091",
+    "name": "Thornbury Fitness Lab",
+    "address": "880 High St, Thornbury, VIC 3071",
+    "location": { "latitude": -37.7599, "longitude": 145.0122 },
+    "facilities": ["24/7 Access", "Free Weights", "Cardio Equipment", "Personal Training"]
+  },
+  {
+    "id": "facility-092",
+    "name": "Coburg Aquatic Centre",
+    "address": "90 Outlook Rd, Coburg North, VIC 3058",
+    "location": { "latitude": -37.7248, "longitude": 144.9655 },
+    "facilities": ["Olympic Pool", "Water Slides", "Sauna", "Kids Programs", "Parking"]
+  },
+  {
+    "id": "facility-093",
+    "name": "Oakleigh Recreation Centre",
+    "address": "20 Atherton Rd, Oakleigh, VIC 3166",
+    "location": { "latitude": -37.9003, "longitude": 145.0877 },
+    "facilities": ["Pool", "Basketball Court", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-094",
+    "name": "Heidelberg Sports Complex",
+    "address": "32 Olympia Rd, Heidelberg West, VIC 3081",
+    "location": { "latitude": -37.7391, "longitude": 145.0539 },
+    "facilities": ["Pool", "Athletics Track", "Tennis Courts", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-095",
+    "name": "Port Phillip Beach Fitness",
+    "address": "88 Beach St, Port Melbourne, VIC 3207",
+    "location": { "latitude": -37.8403, "longitude": 144.9358 },
+    "facilities": ["Beach Access", "Outdoor Training", "Yoga Classes", "Cafe"]
+  },
+  {
+    "id": "facility-096",
+    "name": "Bundoora Park Gym",
+    "address": "1069 Plenty Rd, Bundoora, VIC 3083",
+    "location": { "latitude": -37.6969, "longitude": 145.0582 },
+    "facilities": ["Pool", "Tennis Courts", "Group Classes", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-097",
+    "name": "Ivanhoe Wellness Studio",
+    "address": "235 Upper Heidelberg Rd, Ivanhoe, VIC 3079",
+    "location": { "latitude": -37.7708, "longitude": 145.0445 },
+    "facilities": ["Yoga Classes", "Pilates Studio", "Meditation Room", "Personal Training"]
+  },
+  {
+    "id": "facility-098",
+    "name": "Keysborough Sports Centre",
+    "address": "450 Cheltenham Rd, Keysborough, VIC 3173",
+    "location": { "latitude": -38.013, "longitude": 145.1748 },
+    "facilities": ["Pool", "Basketball Court", "Squash Courts", "Group Classes", "Parking"]
+  },
+  {
+    "id": "facility-099",
+    "name": "Altona Beach Fitness",
+    "address": "88 Esplanade, Altona, VIC 3018",
+    "location": { "latitude": -37.8698, "longitude": 144.8288 },
+    "facilities": ["Beach Access", "Outdoor Training", "Pool", "Cafe", "Parking"]
+  },
+  {
+    "id": "facility-100",
+    "name": "Ringwood Aquatic Centre",
+    "address": "411 Mt Dandenong Rd, Ringwood, VIC 3134",
+    "location": { "latitude": -37.8142, "longitude": 145.2293 },
+    "facilities": ["Olympic Pool", "Aqua Aerobics", "Sauna", "Steam Room", "Kids Programs", "Parking"]
+  }
+]
