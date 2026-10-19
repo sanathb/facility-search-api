@@ -25,8 +25,8 @@ async function main(): Promise<void> {
 
 /** Stops cleanly on SIGTERM/SIGINT; exits on errors nothing else caught. */
 function handleShutdown(app: FastifyInstance): void {
-  // process.once leaves the default handler in place after the first signal, so a second signal
-  // kills the process at once. The flag stops SIGTERM followed by SIGINT from shutting down twice.
+  // process.once removes each listener after it fires, so a repeat of the same signal (a second
+  // Ctrl+C) hits Node's default and exits at once. The flag ignores SIGINT after SIGTERM.
   let shuttingDown = false;
 
   const shutdown = (signal: NodeJS.Signals): void => {
