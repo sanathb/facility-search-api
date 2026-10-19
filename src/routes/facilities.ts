@@ -18,7 +18,12 @@ interface FacilityRoutesOptions {
   tokenVerifier: TokenVerifier;
 }
 
-const protectedErrors = { 400: ProblemResponse, 401: ProblemResponse, 429: ProblemResponse };
+const protectedErrors = {
+  400: ProblemResponse,
+  401: ProblemResponse,
+  429: ProblemResponse,
+  500: ProblemResponse,
+};
 
 export const facilityRoutes: FastifyPluginCallbackTypebox<FacilityRoutesOptions> = (
   app,

@@ -34,7 +34,10 @@ export class FacilityIndex {
   private readonly amenities: ReadonlyMap<string, Uint32Array>;
   /** 0 … N-1: the matches for a request with no query and no amenity filter. */
   private readonly allOrdinals: Uint32Array;
-  /** Reused by every intersection, so a request allocates no lists of matches. */
+  /**
+   * Reused by every intersection, so intersections allocate nothing. search() must stay
+   * synchronous: its matches can be views of these buffers until it returns.
+   */
   private readonly scratch: [Uint32Array, Uint32Array];
 
   constructor(facilities: readonly Facility[]) {
@@ -207,8 +210,10 @@ function pageOf(lists: readonly Uint32Array[], offset: number, limit: number): n
   return page;
 }
 
-/** Combines ascending lists into one ascending list with no duplicates, merging pairs of lists
- * round by round as merge sort does: O(P log k) for P ordinals in k lists. */
+/**
+ * Combines ascending lists into one ascending list with no duplicates, merging pairs of lists
+ * round by round as merge sort does: O(P log k) for P ordinals in k lists.
+ */
 function unionAll(lists: readonly Uint32Array[]): Uint32Array {
   let round = [...lists];
   while (round.length > 1) {

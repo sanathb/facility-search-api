@@ -29,6 +29,13 @@ describe('POST /v1/auth/login', () => {
     expect(response.json()).toMatchObject({ errors: [{ in: 'body', path: '/email' }] });
   });
 
+  it('rejects an email with non-Latin-1 characters', async () => {
+    // Keeps such input away from the mock's btoa(), which would throw and cause a 500.
+    const response = await login(app, { email: '用户@example.com', password: 'secret' });
+    expect(response.statusCode).toBe(400);
+    expect(response.json()).toMatchObject({ errors: [{ in: 'body', path: '/email' }] });
+  });
+
   it('rejects a missing password', async () => {
     const response = await login(app, { email: 'jane@example.com' });
     expect(response.statusCode).toBe(400);

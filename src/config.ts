@@ -73,7 +73,7 @@ export function loadConfig(variables: Record<string, string | undefined> = proce
 function isAddressOrRange(entry: string): boolean {
   const [address = '', prefix, ...rest] = entry.split('/');
   const version = isIP(address);
-  // proxy-addr, which Fastify uses, rejects zone IDs (fe80::1%eth0) that isIP accepts.
+  // Zone IDs (fe80::1%eth0) are refused by choice: a load balancer address never needs one.
   if (version === 0 || rest.length > 0 || address.includes('%')) return false;
   if (prefix === undefined) return true;
   // A /0 range would trust every address; proxy-addr rejects it too.

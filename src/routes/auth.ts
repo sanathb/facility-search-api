@@ -29,6 +29,7 @@ export const authRoutes: FastifyPluginCallbackTypebox<{ login: LoginFn }> = (
           400: ProblemResponse,
           401: ProblemResponse,
           429: ProblemResponse,
+          500: ProblemResponse,
         },
       },
     },
