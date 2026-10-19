@@ -101,7 +101,7 @@ The body is `{ email, password }`. `email` must be in email format and at most 2
 
 ### 3.4 Errors
 
-Every error, including unknown routes and malformed URLs, uses RFC 9457 Problem Details (`Content-Type: application/problem+json`). The OpenAPI document declares error responses with that media type.
+Every error the application produces, including unknown routes and malformed URLs, uses RFC 9457 Problem Details (`Content-Type: application/problem+json`). The OpenAPI document declares error responses with that media type. Three kinds of error come from outside the application and are not Problem Details: Fastify's 503 while the server is closing, Node's HTTP parser errors (400, 408, 431), and, with CORS on, an incomplete preflight request (400 `text/plain`).
 
 ```json
 {
@@ -276,7 +276,7 @@ For `GET /v1/facilities`, in Fastify hook order:
 
 - **Global:** per IP, `RATE_LIMIT_MAX` requests (default 100) per `RATE_LIMIT_WINDOW_MS` (default 60000). Unknown routes count too: the not-found handler uses the limiter, so URLs can't be probed without limit. The exception is a request Fastify's router rejects outright (a malformed URL or a path parameter over 100 characters): it gets a 400 before any hook runs, so it skips the limiter and the security headers, but it reaches no route and reveals nothing (§8.5).
 - **Login:** its own fixed limit of 10 requests per minute per IP, separate from the global count.
-- **`/health`** is exempt.
+- **`/health`** is exempt. So are CORS preflight (`OPTIONS`) requests when `CORS_ORIGINS` is set: `@fastify/cors` answers them in its app-level `onRequest` hook, which runs before the limiter's route-level hook, and they do no work.
 - **When the limit is exceeded:** 429 Problem Details with a `Retry-After` header. Responses carry `x-ratelimit-*` headers.
 - **Storage:** an in-memory store, so limits apply per instance.
 - **Behind a load balancer:** `TRUST_PROXY` lists the load balancers' addresses or CIDR ranges. Each entry must be an IP address or CIDR range, checked at startup, so a hop count such as `1` or a boolean is rejected. Only those proxies' `X-Forwarded-For` entries are trusted, so the limit uses the client address the load balancer adds, and a client can't pick its own IP. Trusting every hop (`true`) would let clients spoof it; Fastify 5.12 ignores hop counts.
@@ -378,7 +378,7 @@ Coverage is reported by `npm run test:coverage`. No hard threshold is enforced.
 3. **Measure queries:** after a warm-up, record p50, p95 and p99 latency over 1,000 iterations for each category: 1 letter, 2 letters, 3 letters, 4+ letters (including "kalo" and "berka", which each start 13 generated brand words, so their lists are merged per request), multi-word, with amenities, no match. Each row also shows the index's slowest sample, so pauses can't hide behind p99.
 4. **Compare against a full scan:** run the same queries over every facility, using `includes` on lowercased names and amenity sets, both prepared once outside the timing. With no ranking or sorting, it is the cheapest alternative. Each measurement starts after a garbage collection.
 5. **Output:** a Markdown table, pasted into the README along with the machine's specs.
-6. **Scale check:** `npm run bench -- 1000000` runs the same measurements at 1,000,000 facilities. On the reference machine, three earlier versions of the index fell short there. Sorting the matching words' postings per request made 1-letter queries no faster than the full scan (48 ms against 52 ms at p50). Merging them per request caused garbage-collection pauses of several hundred milliseconds for 3-letter prefixes. Allocating a list per intersection caused pauses of up to 2 s for multi-word queries. With 1–3 letter prefix lists built at startup, run-based ranking and reused scratch buffers (§5), every query type stays under 3.1 ms at p99 and the slowest sample is 7.8 ms, against 34–98 ms at p50 for the scan.
+6. **Scale check:** `npm run bench -- 1000000` runs the same measurements at 1,000,000 facilities. On the reference machine, three earlier versions of the index fell short there. Sorting the matching words' postings per request made 1-letter queries no faster than the full scan (48 ms against 52 ms at p50). Merging them per request caused garbage-collection pauses of several hundred milliseconds for 3-letter prefixes. Allocating a list per intersection caused pauses of up to 2 s for multi-word queries. With 1–3 letter prefix lists built at startup, run-based ranking and reused scratch buffers (§5), every query type stays around 3 ms at p99, and the slowest sample varies between runs (8–26 ms), against 34–98 ms at p50 for the scan.
 
 ## 12. Documentation deliverables
 

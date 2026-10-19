@@ -63,7 +63,7 @@ Search parameters:
 - `amenities`: comma-separated, at most 20 names and 1,000 characters. A facility must have all of them. Names match whole and ignore case, so `pool` matches "Pool" but not "Olympic Pool".
 - `limit`: 1–100, default 20. `offset`: default 0.
 
-Results whose name starts with the whole query come first; each group is alphabetical. Every error, including unknown routes and malformed URLs, is an [RFC 9457 Problem Details](https://www.rfc-editor.org/rfc/rfc9457) body with a `requestId` you can find in the logs.
+Results whose name starts with the whole query come first; each group is alphabetical. Every error the application produces, including unknown routes and malformed URLs, is an [RFC 9457 Problem Details](https://www.rfc-editor.org/rfc/rfc9457) body with a `requestId` you can find in the logs.
 
 ## Design decisions
 
@@ -115,9 +115,9 @@ Results on an Intel Core i7-9750H (2.6 GHz), 16 GB RAM, Node 24.22:
 | with amenities | 0.269 ms  | 0.328 ms  | 0.364 ms  | 0.422 ms  | 9.683 ms      | 10.352 ms     |
 | no match       | 0.003 ms  | 0.003 ms  | 0.003 ms  | 0.018 ms  | 3.983 ms      | 4.417 ms      |
 
-Single-word queries take microseconds: 1–3 letter prefixes read lists built at startup, a longer prefix merges the lists of the few words it starts, and the ranking finds names that start with the query by binary search. Multi-word and amenity queries take a few tenths of a millisecond, spent intersecting lists. Even the slowest of the 7,000 timed searches took under 0.5 ms. A full scan takes 4–10 ms at this size.
+Single-word queries take microseconds: 1–3 letter prefixes read lists built at startup, a longer prefix merges the lists of the few words it starts, and the ranking finds names that start with the query by binary search. Multi-word and amenity queries take a fraction of a millisecond, spent intersecting lists. Even the slowest of the 7,000 timed searches took under 0.5 ms. A full scan takes about 4–10 ms at this size.
 
-At 1,000,000 facilities (`npm run bench -- 1000000`, several minutes), the index builds in 10 s and uses 199 MB. Every query type stays under 3.1 ms at p99, and the slowest of the 7,000 timed searches took 7.8 ms, against 34–98 ms at p50 for a full scan. Three earlier versions fell short at that size:
+At 1,000,000 facilities on the same machine (`npm run bench -- 1000000`, several minutes), the index builds in 10 s and uses 199 MB. Every query type stays around 3 ms at p99; the slowest single sample varies between runs, from 8 ms to 26 ms, against 34–98 ms at p50 for a full scan. Three earlier versions fell short at that size:
 
 - Sorting the matching words' lists on every request made 1-letter queries no faster than a full scan (48 ms against 52 ms at p50).
 - Merging those lists per request instead caused garbage-collection pauses of several hundred milliseconds for 3-letter prefixes such as "fit".
@@ -128,7 +128,7 @@ That's why lists for 1–3 letter prefixes are built at startup, and why interse
 ## Production concerns
 
 - **Validation:** every input is checked against its schema, and responses are filtered by theirs, so internal fields can't leak.
-- **Rate limiting:** 100 requests a minute per client IP by default; login has its own limit of 10 a minute. Unknown routes count too; only `/health` is exempt. The limiter runs before the token check, so floods never reach the slow verifier. Behind a load balancer, list its addresses in `TRUST_PROXY`, so limits use the client address it adds to `X-Forwarded-For`; nothing else in that header is trusted.
+- **Rate limiting:** 100 requests a minute per client IP by default; login has its own limit of 10 a minute. Unknown routes count too; only `/health` is exempt, and CORS preflight requests (when `CORS_ORIGINS` is set) are not counted either: `@fastify/cors` answers them before the limiter runs, and they do no work. The limiter runs before the token check, so floods never reach the slow verifier. Behind a load balancer, list its addresses in `TRUST_PROXY`, so limits use the client address it adds to `X-Forwarded-For`; nothing else in that header is trusted.
 - **Security headers and CORS:** Helmet defaults. Their content security policy includes `upgrade-insecure-requests`, so over plain HTTP Swagger UI loads only from `localhost`; production traffic is HTTPS anyway. CORS is off unless `CORS_ORIGINS` is set. Request bodies are limited to 10 KB.
 - **Errors:** client errors keep their message; anything unexpected becomes a generic 500, with the details in the log only. A request the router rejects outright (a malformed URL, or a path parameter over 100 characters) gets a 400 before any hook runs, so it skips the rate limiter and security headers, but it reaches no route.
 - **Logging:** structured JSON (pino) with request IDs; readable output in development. An incoming `x-request-id` is reused when well-formed. Authorization headers are redacted, and `/health` polls aren't logged.
