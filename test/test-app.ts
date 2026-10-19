@@ -2,7 +2,7 @@ import { buildApp, type AppDependencies } from '../src/app.js';
 import type { Config } from '../src/config.js';
 import { loadFacilities } from '../src/data/load-facilities.js';
 import { InMemoryFacilityRepository } from '../src/repositories/facility-repository.js';
-import { fakeLogin } from './helpers.js';
+import { fakeLogin, fakeVerifier } from './helpers.js';
 
 export type TestApp = Awaited<ReturnType<typeof buildTestApp>>;
 
@@ -20,13 +20,14 @@ export function testConfig(overrides: Partial<Config> = {}): Config {
   };
 }
 
-/** The app with the real data file and a fast fake login; override any dependency. */
+/** The app with the real data file and fast fakes for auth; override any dependency. */
 export async function buildTestApp(overrides: Partial<AppDependencies> = {}) {
   const facilities = await loadFacilities('assets/facilities.json');
   return buildApp({
     config: testConfig(),
     repository: new InMemoryFacilityRepository(facilities),
     login: fakeLogin,
+    tokenVerifier: fakeVerifier,
     ...overrides,
   });
 }

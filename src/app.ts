@@ -2,17 +2,20 @@ import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import Fastify, { LogController, type FastifyServerOptions } from 'fastify';
 import { randomUUID } from 'node:crypto';
 import type { IncomingMessage } from 'node:http';
+import type { TokenVerifier } from './auth/token-verifier.js';
 import type { Config } from './config.js';
 import { registerErrorHandler, sendProblem } from './plugins/error-handler.js';
 import { registerSecurity } from './plugins/security.js';
 import { registerSwagger } from './plugins/swagger.js';
 import type { FacilityRepository } from './repositories/facility-repository.js';
 import { authRoutes, type LoginFn } from './routes/auth.js';
+import { facilityRoutes } from './routes/facilities.js';
 import { healthRoutes } from './routes/health.js';
 
 export interface AppDependencies {
   config: Config;
   repository: FacilityRepository;
+  tokenVerifier: TokenVerifier;
   login: LoginFn;
 }
 
@@ -28,7 +31,7 @@ const REQUEST_ID = /^[A-Za-z0-9._-]{1,128}$/;
  * Builds the Fastify app from its dependencies without starting a server.
  * server.ts passes the real ones; tests pass fakes and call `app.inject()`.
  */
-export async function buildApp({ config, repository, login }: AppDependencies) {
+export async function buildApp({ config, repository, tokenVerifier, login }: AppDependencies) {
   const app = Fastify({
     logger: loggerOptions(config),
     // Only listed proxies are trusted, so a client can't pick its own IP with X-Forwarded-For.
@@ -67,6 +70,7 @@ export async function buildApp({ config, repository, login }: AppDependencies) {
 
   await app.register(healthRoutes, { repository });
   await app.register(authRoutes, { prefix: '/v1', login });
+  await app.register(facilityRoutes, { prefix: '/v1', repository, tokenVerifier });
 
   return app;
 }
