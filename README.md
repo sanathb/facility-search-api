@@ -2,8 +2,13 @@
 
 A REST API for searching Fitness Passport facilities by name as you type, filtering by amenities, and fetching a facility's details. It is built with TypeScript and Fastify, and designed to stay fast at 100,000+ facilities.
 
-- The brief is in [`docs/CHALLENGE.md`](docs/CHALLENGE.md).
-- The design and the reasoning behind it are in [`docs/DESIGN.md`](docs/DESIGN.md).
+## Documentation
+
+- [`docs/CHALLENGE.md`](docs/CHALLENGE.md): the original brief.
+- [`docs/DESIGN.md`](docs/DESIGN.md): the design and the reasoning behind each decision.
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): for developers. Diagrams, module map, conventions and how-tos.
+- [`docs/TESTING.md`](docs/TESTING.md): how the code is tested, and how to run and extend the tests.
+- [`docs/STAKEHOLDERS.md`](docs/STAKEHOLDERS.md): for product, operations and leadership. What the service does, its speed and safety, risks and roadmap.
 
 ## Quick start
 
