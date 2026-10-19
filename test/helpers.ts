@@ -4,6 +4,7 @@ import {
   type TokenVerifier,
 } from '../src/auth/token-verifier.js';
 import type { Facility } from '../src/domain/facility.js';
+import type { LoginFn } from '../src/routes/auth.js';
 
 export function facility(id: string, name: string, amenities: string[] = []): Facility {
   return {
@@ -42,3 +43,9 @@ export const fakeVerifier: TokenVerifier = {
       ? Promise.resolve(TEST_USER)
       : Promise.reject(new InvalidTokenError('Unknown test token')),
 };
+
+/** Behaves like the mock login (password "error" fails), without the delay. */
+export const fakeLogin: LoginFn = (email, password) =>
+  password === 'error'
+    ? Promise.reject(new Error('Invalid credentials'))
+    : Promise.resolve({ token: VALID_TOKEN, user: { ...TEST_USER, email } });

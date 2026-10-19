@@ -7,11 +7,13 @@ import { registerErrorHandler, sendProblem } from './plugins/error-handler.js';
 import { registerSecurity } from './plugins/security.js';
 import { registerSwagger } from './plugins/swagger.js';
 import type { FacilityRepository } from './repositories/facility-repository.js';
+import { authRoutes, type LoginFn } from './routes/auth.js';
 import { healthRoutes } from './routes/health.js';
 
 export interface AppDependencies {
   config: Config;
   repository: FacilityRepository;
+  login: LoginFn;
 }
 
 const BODY_LIMIT_BYTES = 10 * 1024;
@@ -26,7 +28,7 @@ const REQUEST_ID = /^[A-Za-z0-9._-]{1,128}$/;
  * Builds the Fastify app from its dependencies without starting a server.
  * server.ts passes the real ones; tests pass fakes and call `app.inject()`.
  */
-export async function buildApp({ config, repository }: AppDependencies) {
+export async function buildApp({ config, repository, login }: AppDependencies) {
   const app = Fastify({
     logger: loggerOptions(config),
     // Only listed proxies are trusted, so a client can't pick its own IP with X-Forwarded-For.
@@ -64,6 +66,7 @@ export async function buildApp({ config, repository }: AppDependencies) {
   await registerSwagger(app);
 
   await app.register(healthRoutes, { repository });
+  await app.register(authRoutes, { prefix: '/v1', login });
 
   return app;
 }
