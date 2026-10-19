@@ -4,6 +4,11 @@ This guide is for developers new to the codebase: it shows how the parts of the 
 
 **Read next:** [`DESIGN.md`](DESIGN.md) for why it is built this way, [`TESTING.md`](TESTING.md) for how it is tested, and the [`README`](../README.md) for the quick start and the API.
 
+**Interactive diagrams.** Two standalone HTML pages show the same system with dark and light themes. Click any box to see the source lines behind it. GitHub shows `.html` files as source code, so download them or open them from a local clone in a browser.
+
+- [`diagrams/architecture-overview.html`](diagrams/architecture-overview.html): every component, the main request path, token checks, error exits and startup.
+- [`diagrams/search-request-flow.html`](diagrams/search-request-flow.html): one `GET /v1/facilities` request, step by step, with its 429, 401 and 400 exits.
+
 ## System context
 
 ```mermaid
@@ -95,7 +100,7 @@ Not drawn, because several layers share them: `src/schemas/` (TypeBox schemas), 
 
 ## A search request, step by step
 
-`GET /v1/facilities`, from arrival to response. Each `break` is an early exit.
+`GET /v1/facilities`, from arrival to response. Each `break` is an early exit. For an interactive version that links each step to its source lines, see [`diagrams/search-request-flow.html`](diagrams/search-request-flow.html).
 
 ```mermaid
 sequenceDiagram

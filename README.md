@@ -7,6 +7,7 @@ A REST API for searching Fitness Passport facilities by name as you type, filter
 - [`docs/CHALLENGE.md`](docs/CHALLENGE.md): the original brief.
 - [`docs/DESIGN.md`](docs/DESIGN.md): the design and the reasoning behind each decision.
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): for developers. Diagrams, module map, conventions and how-tos.
+- [`docs/diagrams/`](docs/diagrams/): interactive HTML diagrams of the [architecture](docs/diagrams/architecture-overview.html) and a [search request](docs/diagrams/search-request-flow.html). Open them in a browser; GitHub shows HTML as source code.
 - [`docs/TESTING.md`](docs/TESTING.md): how the code is tested, and how to run and extend the tests.
 - [`docs/STAKEHOLDERS.md`](docs/STAKEHOLDERS.md): for product, operations and leadership. What the service does, its speed and safety, risks and roadmap.
 
